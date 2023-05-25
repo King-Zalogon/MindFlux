@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindOverflow</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/rubik-ico.png" title="activity icons" alt="Rubik icon created by iconixar - Flaticon">
+</head>
+<body>
+    <header>
+        <div class="header-logo"></div>
+        <nav class="header-menubar">
+            <ul>
+                <li><a href="index.html">MindFlux</a></li>
+                <li><a href="projects.html">Current Fluxs</a></li>
+                <li><a href="milestones.html">What have I done?!</a></li>
+                <li><a href="services.html">Let's work!</a></li>
+                <li><a href="about.html">What's inside?</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <main>
+        <div class="main-content">
+            <section class="sections">
+
+            </section>
+            <section class="sections">
+                <article>
+                    <div>
+                        <h3>Some title</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit similique ipsam dolore officia autem ipsum magnam commodi eum harum natus.</p>
+                    </div>
+                </article>
+                <article>
+                    <img src="assets/images/rubik_gif.gif" style="width:30%; padding:5px; position:relative" alt="Animated rubik by giphy.com">
+                    
+                    <div>
+                        <h3>What the Mind can't hold back: </h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita blanditiis accusamus rerum aliquid quod natus nesciunt, labore quis, a harum voluptate aspernatur totam quam quaerat sunt fugit et sit debitis. Cumque dolores explicabo, earum inventore, corporis minus ipsam quidem ducimus aliquam omnis fugiat assumenda quo ea sapiente perferendis, autem deserunt.
+
+                        </p>
+                    </div>
+                </article>
+            </section>
+            <section class="sections">
+                
+                <h1>Front-End Example</h1>
+                <form id="myForm">
+                    <label for="inputText">Enter Text:</label>
+                    <input type="text" id="inputText" name="inputText">
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="output"></div>
+
+                <script>
+                    // JavaScript code to handle form submission
+                    const form = document.getElementById('myForm');
+                    const output = document.getElementById('output');
+
+                    form.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const inputText = document.getElementById('inputText').value;
+
+                        fetch('/process', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ text: inputText })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            output.innerText = data.result;
+                        })
+                        .catch(error => console.log(error));
+                    });
+                </script>
+            </section>
+        </div>
+        <aside class="side-content">
+
+        </aside>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
