@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindOverflow</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/icons/rubik-ico.png" title="activity icons" alt="Rubik icon created by iconixar - Flaticon">
+</head>
+<body>
+    <header>
+        <div class="header-logo"><a href="index.html"><img src="assets/icons/rubiks-cube-152372_1280.webp" alt="rubik cube"></a></div>
+        <nav class="header-menubar">
+            <ul>
+                <li><a href="index.html">MindFlux</a></li>
+                <li><a href="projects.html">Fluxs</a></li>
+                <li><a href="milestones.html">Milestones</a></li>
+                <li><a href="services.html">Let's work!</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+    <p>Simple form: <a href="mailto:whiletrue.mindflux@gmail.com">Enviar correo</a></p>
+
+    <p>With subject: <a href="mailto:whiletrue.mindflux@gmail.com?subject=Information Request.">Send e-mail</a></p>
+
+    <p>With image: <a href="mailto:whiletrue.mindflux@gmail.com"><img src="assets/icons/icon_correo.png" alt="Send e-mail" width="60px"></a></p>
+    <section>
+        <form action="show_data.html" target="_blank">
+            <label for="firstname">First name: </label><input size="30" type="text" name="firstname"
+                placeholder="John/Jane"> <br><br>
+            <label for="lastname">Last name:</label><input size="30" type="text" name="lastname"
+                placeholder="Doe"> <br><br>
+            <label for="street">Address:</label><input type="text" name="address"
+                placeholder="Street name"> <br><br>
+            <label for="number">Number:</label><input type="number" name="number" placeholder="Street number">
+            <br><br>
+            <label for="city">City: </label><input type="text" name="city" placeholder="Buenos Aires"> <br><br>
+            <label for="zipcode">Zip code:</label><input type="text" name="zip code"
+                placeholder="zip/postal code"> <br> <br>
+            <label for="phonenumber">Phone: </label><input type="tel" name="phone"
+                placeholder="+54 11 5555 4321"> <br><br>
+            <label for="BirthDate">Birth date (dd/mm/yyyy): </label> <input type="date" name="birthdate"> <br><br>
+            <label for="pass">Password: </label><input type="password" name="pass"> <br><br>
+            <label for="mail">Email: </label><input type="email" name="mail" placeholder="your@email.com"> <br><br>
+            <label for="url">LinkedIn: </label><input type="url" name="url"> <br>
+            <br>
+            <label for="color">Favorite color:</label>
+            <input type="color" name="colorChoice" id="color">
+            <br><br>
+    
+            <p> Knowledges:<br>
+                <input type="checkbox" name="conocimientos" value="HTML"> HTML
+                <input type="checkbox" name="conocimientos" value="CSS"> CSS
+                <input type="checkbox" name="conocimientos" value="BOOTSTRAP"> Bootstrap
+                <input type="checkbox" name="conocimientos" value="Javascript"> Javascript
+                <input type="checkbox" name="conocimientos" value="Typescript"> Typescript
+                <br>
+                <input type="checkbox" name="conocimientos" value="Angular"> Angular
+                <input type="checkbox" name="conocimientos" value="SQL"> SQL
+                <input type="checkbox" name="conocimientos" value="Python"> Python
+                <input type="checkbox" name="conocimientos" value="Django"> Django
+            </p>
+    
+            <label for="studies">Studies:</label>
+            <select id="studies" name="studies">
+                <option value="Elementary">Elementary</option>
+                <option value="Highschool">Highschool diploma</option>
+                <option value="Associate">Associate degree</option>
+                <option value="Bachelor">Bachelor degree</option>
+            </select>
+
+            <p>Studies status:
+                <input type="radio" name="status" value="complete" checked>Completed
+                <input type="radio" name="status" value="ongoing">Ongoing
+                <input type="radio" name="status" value="abandoned">Abandoned
+            </p>
+    
+            <label for="comments">Comments:<br></label> <textarea name="comments" rows="10" cols="30"></textarea>
+            <br>
+            <br>
+        
+            <input type="checkbox" name="accept" unchecked> I'm aware that this is a work in progress and willingly submit the entered information to be used by the creator of this beautyful web site.
+            
+            <br>
+            <br>
+            <input type="submit" value="Submit">
+            <button type="reset">Reset</button>
+        </form>
+    </section>
+</body>
+</html>

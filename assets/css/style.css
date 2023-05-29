@@ -12,7 +12,7 @@ body, header, main, footer {
     /* border: 3px red solid; */
     min-height: 50px;
     margin: 0.5rem;
-    min-width: 400px;
+    min-width: 200px;
     background-color: rgb(232, 170, 66);
 }
 
@@ -23,10 +23,13 @@ body {
 }
 
 header {
-    /* background: rgb(248, 241, 241); */
     /* border: 2px chartreuse solid; */
     background-color: rgb(232, 170, 66);
     box-shadow: 0 0 1rem 0 rgba(229, 124, 35, 50%);
+    border-radius: 0.5rem; 
+    position: sticky;
+    top: 0.5rem;
+    z-index: 9;
 }
 
 main {
@@ -86,17 +89,17 @@ p, h3 {
     max-height: 100%;
   }
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     .container {
       width: 30%;
     }
-  }
+  } */
 
-/* #rubik-gif {
+#rubik-gif {
     width: 30%;
     padding: 5px;
     position:relative
-} */
+}
 
 .video-container {
   position: relative;
@@ -165,6 +168,10 @@ p, h3 {
 
 footer {
   background-color: rgb(229, 124, 35);
+  border-radius: 0.5rem;
+  position: sticky;
+  bottom: 0rem;
+  z-index: 9;
 }
 
 /* THE END */
