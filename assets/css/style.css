@@ -194,10 +194,76 @@ footer>div {
   border: 1px black  solid;
 } */
 
+
 footer i:hover {
   transform: scale(1.2, 1.2);
   transition-duration: 100ms;
   transition-timing-function: ease
+}
+
+.header-logo img:hover {
+  transform: scale(1.2, 1.2);
+  transition-duration: 100ms;
+  transition-timing-function: ease;
+}
+
+main p::first-letter {
+  font-weight: bolder;
+  font-size: larger;
+  color: gold;
+}
+
+
+/* 3D CUBE */
+
+#cube-slot {        /* This div contains the cube */
+  width: 100%;   /* The cube must rotate inside here  */
+  height: 100%;
+  perspective: 1000px;  /* "Focal distance" to the cube */
+  margin: 100px 100px;  /* Containers margins */
+}
+
+.cube {
+  width: 100px;                              /* Size of cube */
+  height: 100px;
+  transform-style: preserve-3d;              /* Turns into 3D */
+  transform: rotateY(225deg) rotateX(25deg);  /* Initial position*/
+  transition: 3s ease-in;
+}
+
+.cube div:nth-child(1) { /* Front, gets closer to 50px on Z */
+  transform: translateZ(50px);
+  background-color: brown;
+}
+.cube div:nth-child(2) { /* Rotates 180 on X, since this makes it further, I get it 50px closer on Z */
+  transform: rotateX(180deg) translateZ(50px);
+  background-color: pink;
+}
+.cube div:nth-child(3) { /* Rotates -90 on Y, since this makes it further, I get it 50px closer on Z */
+  transform: rotateY(-90deg) translateZ(50px);
+  background-color: lightcoral;
+}
+.cube div:nth-child(4) { /* Rotates 90 on Y, since this makes it further, I get it 50px closer on Z */
+  transform: rotateY(90deg) translateZ(50px);
+  background-color: lightgreen;
+}
+.cube div:nth-child(5) { /* Rotates 90 on X, since this makes it further, I get it 50px closer on Z */
+  transform: rotateX(90deg) translateZ(50px);
+  background-color: orange;
+}
+.cube div:nth-child(6) { /* Rotates -90 on X, since this makes it further, I get it 50px closer on Z */
+  transform: rotateX(-90deg) translateZ(50px);
+  background-color: red;
+}
+
+.cube:hover{ /* On mouse over, rotates over X and Y */
+  transform: rotateY(35deg) rotateX(20deg);
+}
+
+.cube div {              /*Cube's faces*/
+  position: absolute;
+  width: 100px;        /*Cube size 100x100x100px */
+  height: 100px;
 }
 
 
