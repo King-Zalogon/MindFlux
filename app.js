@@ -1,40 +1,8 @@
 new Vue({
     el: '#app',
-    data: {
-        nombre: '',
-        telefono: ''
-    },
-    methods: {
-        submitForm() {
-            const data = {
-                nombre: this.nombre,
-                telefono: this.telefono
-            };
-
-            fetch('http://localhost:5000/form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                // Aquí puedes agregar cualquier lógica adicional después de enviar los datos
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    }
-});
-
-const app = Vue.createApp({
-    // ... Resto del código Vue ...
     methods: {
         mostrarReporte() {
-            fetch('/reporte')
+            fetch('http://localhost:5000/reporte')
                 .then(response => response.json())
                 .then(data => this.mostrarTabla(data))
                 .catch(error => console.error(error));
@@ -44,7 +12,6 @@ const app = Vue.createApp({
             const table = document.createElement('table');
             const tbody = document.createElement('tbody');
 
-            // Crea las filas de la tabla con los datos recibidos
             data.forEach(item => {
                 const row = document.createElement('tr');
                 const nombreCell = document.createElement('td');
@@ -65,4 +32,31 @@ const app = Vue.createApp({
     }
 });
 
-app.mount('#app');
+document.getElementById('formulario').addEventListener('submit', event => {
+    event.preventDefault();
+
+    const nombre = document.getElementById('nombre').value;
+    const telefono = document.getElementById('telefono').value;
+
+    const data = {
+        nombre: nombre,
+        telefono: telefono
+    };
+
+    fetch('http://localhost:5000/form', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        document.getElementById('nombre').value = '';
+        document.getElementById('telefono').value = '';
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
